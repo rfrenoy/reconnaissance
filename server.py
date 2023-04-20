@@ -12,7 +12,7 @@ face_app.prepare(ctx_id=0, det_size=(640, 640))
 
 
 @app.post("/detect_faces")
-async def detect_face(file: UploadFile = File(...)):
+async def detect_faces(file: UploadFile = File(...)):
     contents = await file.read()
     image = np.array(Image.open(io.BytesIO(contents)).convert("RGB"))
 
