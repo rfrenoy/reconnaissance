@@ -20,7 +20,7 @@ docker run -p 8000:8000 reconnaissance
 
 ```bash
 docker pull rfrenoy/reconnaissance:0.1.0
-docker run -p 8000:8000
+docker run -p 8000:8000 rfrenoy/reconnaissance:0.1.0
 ```
 
 ## Making requests
