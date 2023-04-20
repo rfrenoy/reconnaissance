@@ -19,7 +19,7 @@ docker run -p 8000:8000 reconnaissance
 ## Pulling image from docker hub
 
 ```bash
-docker pull ...
+docker pull rfrenoy/reconnaissance:0.1.0
 docker run -p 8000:8000
 ```
 
