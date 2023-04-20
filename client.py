@@ -1,41 +1,3 @@
-# Reconnaissance
-
-This project is leveraging [Insightface](https://github.com/deepinsight/insightface) and [FastAPI](https://github.com/tiangolo/fastapi) to create a simple face detection API. You can use it to extract bounding boxes, landmarks and some other pieces of information.
-
-## Local install
-
-```bash
-pip install -r requirements.txt
-uvicorn server:app --host 0.0.0.0 --port 8000
-```
-
-## Via docker, built locally
-
-```bash
-docker build -t reconnaissance .
-docker run -p 8000:8000 reconnaissance
-```
-
-## Pulling image from docker hub
-
-```bash
-docker pull ...
-docker run -p 8000:8000
-```
-
-## Making requests
-Once your server is running, you can run a request on a picture with:
-```bash
-curl -X POST -F "file=@<path-to-image>" http://localhost:8000/detect_faces
-```
-
-It will return a JSON object with all informations for all detected faces.
-
-Here is an example of a client in python that runs the request on a `test.png` file
-and display the image with bounding boxes and landmarks:
-
-```python
-# client.py
 import requests
 from PIL import Image
 import io
@@ -84,4 +46,3 @@ for key in response_data:
 
 # Display the plot
 plt.show()
-```
