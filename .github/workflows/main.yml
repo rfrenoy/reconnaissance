@@ -16,16 +16,6 @@ jobs:
         username: ${{ secrets.DOCKER_USERNAME }}
         password: ${{ secrets.DOCKER_PASSWORD }}
 
-    - name: Build and export to Docker
-      uses: docker/build-push-action@v4
-      with:
-        context: .
-        load: true
-        tags: ${{ secrets.DOCKER_USERNAME }}/reconnaissance:test
-
-    - name: Test
-      run: docker run --rm ${{ secrets.DOCKER_USERNAME }}/reconnaissance:test
-
     - name: Extract Version from pyproject.toml
       id: extract_version
       run: echo ::set-output name=version::$(awk -F'=' '/^version/ {print $2}' pyproject.toml | sed -e 's/^ *//g' -e 's/ *$//g' -e 's/"//g')
