@@ -2,21 +2,25 @@
 
 This project is leveraging [Insightface](https://github.com/deepinsight/insightface) and [FastAPI](https://github.com/tiangolo/fastapi) to create a simple face detection API. You can use it to extract bounding boxes, landmarks and some other pieces of information.
 
-## Local install
+# Install
+
+There are three ways of running the project: locally, on docker building from source, on docker pulled from the hub.
+
+## Running locally
 
 ```bash
 pip install -r requirements.txt
 uvicorn server:app --host 0.0.0.0 --port 8000
 ```
 
-## Via docker, built locally
+## Running via a locally built image
 
 ```bash
 docker build -t reconnaissance .
 docker run -p 8000:8000 reconnaissance
 ```
 
-## Pulling image from docker hub
+## Running via the official image from the hub
 
 ```bash
 docker pull rfrenoy/reconnaissance:0.1.0
